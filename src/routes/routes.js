@@ -1,10 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
-import Main from "../layout/Main";
-import About from "../pages/About";
-import Cart from "../pages/Cart";
-import Home from "../pages/Home";
-import TopRated from "../pages/TopRated";
-import Wishlist from "../pages/Wishlist";
+import Dashboard from "../layout/Dashboard/Dashboard";
+import Main from "../layout/Main/Main";
+import AddProduct from "../pages/Dashboard/AddProduct";
+import ProductList from "../pages/Dashboard/ProductList";
+import About from "../pages/Main/About";
+import Cart from "../pages/Main/Cart";
+import Home from "../pages/Main/Home";
+import TopRated from "../pages/Main/TopRated";
+
 
 const routes = createBrowserRouter([
   {
@@ -27,9 +30,19 @@ const routes = createBrowserRouter([
         path: "cart",
         element: <Cart />,
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+    children: [
       {
-        path: "wishlist",
-        element: <Wishlist />,
+        path: "/dashboard",
+        element: <ProductList />,
+      },
+      {
+        path: "add-product",
+        element: <AddProduct />,
       },
     ],
   },

@@ -1,5 +1,4 @@
 import React from 'react';
-import ProductCard from '../components/ProductCard';
 
 const TopRated = () => {
   // const {state : {products, loading, error}} = useProduct();
