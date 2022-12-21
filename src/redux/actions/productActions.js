@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes/productActionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes/actionTypes";
 
 export const addToCart = (data) => {
     return {

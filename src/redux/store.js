@@ -1,7 +1,8 @@
 import { composeWithDevTools } from '@redux-devtools/extension';
-import { createStore } from 'redux';
-import productReducer from './reducers/productReducer';
+import { applyMiddleware, createStore } from 'redux';
+import cartCounter from './middleware/cartCounter';
+import rootReducer from './reducers/rootReducer';
 
-const store = createStore(productReducer, composeWithDevTools());
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(cartCounter)));
 
 export default store;
