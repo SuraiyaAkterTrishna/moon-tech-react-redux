@@ -1,12 +1,18 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes/actionTypes";
+import { ADD_TO_CART, LOAD_PRODUCT, REMOVE_FROM_CART } from "../actionTypes/actionTypes";
 
 const initialState = {
+    products : [],
     cart : [],
 };
 
 const productReducer = (state = initialState, action) => {
     const selectedProduct = state.cart.find(data=>data.id===action.payload.id);
     switch (action.type) {
+        case LOAD_PRODUCT:
+            return {
+                ...state,
+                products : [...action.payload]
+            };
         case ADD_TO_CART:
             if (selectedProduct) {
                 selectedProduct.quantity++;

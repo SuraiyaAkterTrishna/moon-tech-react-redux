@@ -1,4 +1,11 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes/actionTypes";
+import { ADD_TO_CART, LOAD_PRODUCT, REMOVE_FROM_CART } from "../actionTypes/actionTypes";
+
+export const loadProducts = (data) => {
+    return {
+        type: LOAD_PRODUCT, 
+        payload: data
+    }
+};
 
 export const addToCart = (data) => {
     return {
